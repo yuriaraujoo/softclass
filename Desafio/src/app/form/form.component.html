@@ -1,0 +1,52 @@
+
+
+
+<div class="jumbotron-style" class="container">
+    <h1>Form</h1>
+    <hr class="my-4">
+  
+    
+  <form #f="ngForm">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="nome">Nome</label>
+          <input type="text" class="form-control" name="Nome" id="nome" placeholder="Primeiro Nome" ngModel>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="sobrenome">Sobrenome</label>
+          <input type="text" class="form-control" name="Sobrenome" id="sobrenome" placeholder="Sobrenome" ngModel>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="Email" id="email" placeholder="email@email.com" ngModel>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="telefone">Telefone</label>
+            <input type="number" class="form-control" name="Telefone" id="telefone" placeholder="Telefone" ngModel>
+          </div>     
+        </div>
+        <fieldset class="form-group">
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0" >Genero</legend>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="Genero" id="masculino" value="Masculino" ngModel>
+                  <label class="form-check-label" for="masculino">
+                    Masculino
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="Genero" id="feminino" value="Feminino" ngModel>
+                  <label class="form-check-label" for="feminino">
+                    Feminino
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>   
+          
+          <app-debug [form]="f"></app-debug>
+  </form>
+  </div>
+  
+  
