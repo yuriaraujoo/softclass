@@ -8,6 +8,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { routing } from './app.routing';
 import { HomeComponent } from './home/home.component';
 import { DebugComponent } from './debug/debug.component';
+import { HttpModule } from '@angular/http';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { DebugComponent } from './debug/debug.component';
   imports: [
     BrowserModule,
     routing,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
