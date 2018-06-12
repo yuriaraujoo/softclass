@@ -7,7 +7,7 @@
               <form>
                  <div class="form-row">
                     <div class="form-group col-md-2">
-                      <img  src="" class="rounded-circle" >
+                      <img  src={{obj?.picture.large}} class="rounded-circle" >
                     </div>                                                      
                   </div>
               </form>
@@ -16,20 +16,16 @@
                       <form >
                         <div>
                           <div class="form-group col-md-6">
-                            <label for="nome" >Nome:</label>
-                            <input type="text" class="form-control" name="nome" ngModel required #nome="ngModel">
+                            <label for="nome" >Nome: {{obj?.name.first}}</label>
                           </div>
                             <div class="form-group col-md-6">
-                            <label for="sobrenome" >Sobrenome:</label>
-                            <input type="text" class="form-control" name="sobrenome" ngModel required #sobrenome="ngModel">
+                            <label for="sobrenome" >Sobrenome:{{obj?.name.last}}</label>
                           </div>
                            <div class="form-group col-md-6">
-                           <label for="email">Email:</label>
-                           <input type="text" class="form-control" name="email"  ngModel required #email="ngModel">
+                           <label for="email">Email: {{obj?.email}}</label>
                           </div>
                           <div class="form-group col-md-6">
-                            <label for="dataNascimento" >Data de Nascimento:</label>
-                            <input type="text" class="form-control" name="dataNascimento" ngModel required #dataNascimento="ngModel">
+                            <label for="dataNascimento" >Data de Nascimento: {{obj?.dob}} </label>
                           </div>     
                           </div>
                       </form>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http'; 
-import { HttpService } from '../http.service';
+
 
 
 
@@ -8,34 +8,28 @@ import { HttpService } from '../http.service';
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css'],
-  providers: [HttpService]
 })
 export class ProfileComponent implements OnInit {
 
   getData;
 
-  constructor(private http: HttpService ) { }
+ 
+  constructor(private http: Http ) { }
 
-  onTestGet() {
-    this.http.getCurrentTime()
-    .subscribe(
-       data => this.getData = JSON.stringify(data),
-       error => alert(error),
-       () => console.log("API ok."))
-    }
+  public obj: any;
 
   ngOnInit() {
    
+     this.http
+    .get("https://randomuser.me/api/")
+    .subscribe(dados => {
+      //this.preencherPerfil(dados);
+      this.obj = JSON.parse((dados['_body'])).results[0];
+      console.log(this.obj);
+      
+    });
 
-// this.http.get("//randomuser.me/api/");
-//populaDadosForm("//randomuser.me/api/")
-    
-    
-    }
   }
 
-
-
- 
-    
+}
 
